@@ -1,0 +1,26 @@
+version: "3"
+services:
+  app:
+    container_name: sql-pivot
+    image: node:10
+    user: node
+    working_dir: "/var/www/app"
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/var/www/app
+    command: "npx pm2 start ecosystem.config.js --no-daemon"
+    depends_on:
+      - postgres
+  
+  postgres:
+    image: postgres:10.1
+    restart: always
+    environment:
+      - POSTGRES_DB=demo
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ./.docker/conf/postgres/:/docker-entrypoint-initdb.d
