@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 5px;
+    }
+    th {
+      text-align: left;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>name</th>
+    <th>email</th> 
+    <th>item</th>
+    <th>quantity</th>
+    <th>total price</th>
+  </tr>
+  <% data.forEach(function(item){ %>
+    <tr>
+        <td><%= item.full_name %></td>
+        <td><%= item.email %></td>
+        <td><%= item.item %></td>
+        <td><%= item.quantity %></td>
+        <td><%= item.total_price %></td>
+      </tr>
+  <% }) %>
+</table>  
+
+<a href="/pivot">Pivot!</a>
+
+</body>
+</html>

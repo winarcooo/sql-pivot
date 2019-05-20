@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 5px;
+    }
+    th {
+      text-align: left;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>name</th>
+    <th>barang 1</th> 
+    <th>barang 2</th>
+    <th>barang 3</th>
+  </tr>
+  <% data.forEach(function(item){ %>
+    <tr>
+        <td><%= item.full_name %></td>
+        <td><%= item.barang1 %></td>
+        <td><%= item.barang2 %></td>
+        <td><%= item.barang3 %></td>
+      </tr>
+  <% }) %>
+</table> 
+<a href="/">revert!</a>
+</body>
+</html>
